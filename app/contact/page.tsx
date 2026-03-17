@@ -1,0 +1,204 @@
+'use client';
+
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { Phone, MapPin, Mail, Clock } from 'lucide-react';
+
+export default function ContactPage() {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    alert('Thank you for your enquiry. We will be in touch shortly.');
+  };
+
+  return (
+    <>
+      <Header />
+      <main>
+        <section className="relative isolate overflow-hidden bg-primary pt-24 sm:pt-32">
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary to-secondary" />
+          <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+            <div className="mx-auto max-w-3xl text-center">
+              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+                Contact Us
+              </h1>
+              <p className="mt-6 text-lg leading-8 text-gray-200 sm:text-xl">
+                Get in touch for a free quote, site survey, or to discuss your traffic management
+                requirements
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-24 sm:py-32 bg-white">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+              <div>
+                <h2 className="text-3xl font-bold tracking-tight text-primary mb-8">
+                  Get in Touch
+                </h2>
+                <div className="space-y-8">
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
+                        <Phone className="h-6 w-6 text-accent" />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-primary mb-1">Phone</h3>
+                      <a href="tel:07547183741" className="text-muted-foreground hover:text-accent transition-colors">
+                        07547 183741
+                      </a>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        For urgent or emergency works, call anytime
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
+                        <MapPin className="h-6 w-6 text-accent" />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-primary mb-1">Address</h3>
+                      <address className="text-muted-foreground not-italic">
+                        The Courtyard, Alban Park<br />
+                        St Albans<br />
+                        AL4 0LA
+                      </address>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
+                        <Mail className="h-6 w-6 text-accent" />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-primary mb-1">Email</h3>
+                      <a href="mailto:info@etmtrafficmanagement.co.uk" className="text-muted-foreground hover:text-accent transition-colors">
+                        info@etmtrafficmanagement.co.uk
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10">
+                        <Clock className="h-6 w-6 text-accent" />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-primary mb-1">Hours</h3>
+                      <p className="text-muted-foreground">
+                        24/7 Emergency Response Available
+                      </p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        Office hours: Monday - Friday, 8am - 6pm
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-12 p-6 bg-muted rounded-lg">
+                  <h3 className="font-semibold text-primary mb-3">Emergency Works?</h3>
+                  <p className="text-muted-foreground mb-4">
+                    For urgent traffic management requirements, call us directly for immediate response.
+                  </p>
+                  <Button asChild className="bg-accent hover:bg-accent/90 text-white w-full sm:w-auto">
+                    <a href="tel:07547183741">
+                      <Phone className="mr-2 h-4 w-4" />
+                      Call 07547 183741 Now
+                    </a>
+                  </Button>
+                </div>
+              </div>
+
+              <div>
+                <div className="bg-muted p-8 rounded-lg">
+                  <h2 className="text-2xl font-bold tracking-tight text-primary mb-6">
+                    Request a Quote or Site Survey
+                  </h2>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div>
+                      <Label htmlFor="name">Name *</Label>
+                      <Input id="name" name="name" required className="mt-2" />
+                    </div>
+                    <div>
+                      <Label htmlFor="company">Company</Label>
+                      <Input id="company" name="company" className="mt-2" />
+                    </div>
+                    <div>
+                      <Label htmlFor="email">Email *</Label>
+                      <Input id="email" name="email" type="email" required className="mt-2" />
+                    </div>
+                    <div>
+                      <Label htmlFor="phone">Phone *</Label>
+                      <Input id="phone" name="phone" type="tel" required className="mt-2" />
+                    </div>
+                    <div>
+                      <Label htmlFor="service">Service Required</Label>
+                      <Input id="service" name="service" placeholder="e.g., Planned Works, Emergency Response" className="mt-2" />
+                    </div>
+                    <div>
+                      <Label htmlFor="message">Project Details *</Label>
+                      <Textarea
+                        id="message"
+                        name="message"
+                        required
+                        rows={6}
+                        placeholder="Please provide details about your project, location, and requirements"
+                        className="mt-2"
+                      />
+                    </div>
+                    <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-white">
+                      Send Enquiry
+                    </Button>
+                    <p className="text-xs text-muted-foreground">
+                      By submitting this form, you agree to be contacted regarding your enquiry.
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-24 sm:py-32 bg-muted">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-primary mb-6">
+                Ready to Get Started?
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
+                Whether you need a site survey, quotation, or have questions about our services, our
+                experienced team is ready to help. Contact us today to discuss your requirements.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-white">
+                  <a href="tel:07547183741">
+                    <Phone className="mr-2 h-5 w-5" />
+                    Call Us
+                  </a>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+                  <a href="mailto:info@etmtrafficmanagement.co.uk">
+                    <Mail className="mr-2 h-5 w-5" />
+                    Email Us
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}
