@@ -46,8 +46,15 @@ export default function UrbanInfrastructurePage() {
     <>
       <Header />
       <main>
-        <section className="relative isolate overflow-hidden bg-primary pt-24 sm:pt-32">
-          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary to-secondary" />
+        <section className="relative isolate overflow-hidden bg-primary pt-24 sm:pt-32 min-h-[50vh] flex items-center">
+          <Image
+            src="https://images.pexels.com/photos/1624600/pexels-photo-1624600.jpeg"
+            alt="Urban infrastructure works background"
+            fill
+            className="absolute inset-0 -z-10 object-cover object-center opacity-30 shadow-2xl"
+            priority
+          />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/80 via-primary/40 to-primary/80" />
           <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
             <div className="mx-auto max-w-4xl">
               <div className="mb-8">
@@ -86,17 +93,6 @@ export default function UrbanInfrastructurePage() {
         <section className="py-24 sm:py-32 bg-white">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-4xl">
-              <div className="mb-16">
-                <div className="relative h-64 sm:h-96 rounded-lg overflow-hidden">
-                  <Image
-                    src="https://images.pexels.com/photos/1624600/pexels-photo-1624600.jpeg"
-                    alt="Urban infrastructure works"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-
               <div className="prose prose-lg max-w-none">
                 <h2 className="text-3xl font-bold tracking-tight text-primary mb-6">Project Overview</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-12">
