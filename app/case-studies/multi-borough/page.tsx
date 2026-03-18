@@ -54,7 +54,7 @@ export default function MultiBoroughPage() {
       <main>
         <section className="relative isolate overflow-hidden bg-primary pt-24 sm:pt-32 min-h-[50vh] flex items-center">
           <Image
-            src="https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg"
+            src="/Make_UK_street_202603180055.jpeg"
             alt="Multi-borough infrastructure scheme background"
             fill
             className="absolute inset-0 -z-10 object-cover object-center opacity-30 shadow-2xl"

@@ -48,7 +48,7 @@ export default function UrbanInfrastructurePage() {
       <main>
         <section className="relative isolate overflow-hidden bg-primary pt-24 sm:pt-32 min-h-[50vh] flex items-center">
           <Image
-            src="https://images.pexels.com/photos/1624600/pexels-photo-1624600.jpeg"
+            src="/Utility_worksite_in_202603180103.jpeg"
             alt="Urban infrastructure works background"
             fill
             className="absolute inset-0 -z-10 object-cover object-center opacity-30 shadow-2xl"
