@@ -9,28 +9,8 @@ import { Button } from '@/components/ui/button';
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
-  {
-    name: 'Services',
-    href: '/services',
-    dropdown: [
-      { name: 'Urban & Rural Traffic Management', href: '/services#urban-rural' },
-      { name: 'High Speed Traffic Management', href: '/services#high-speed' },
-      { name: 'Planned Works', href: '/services#planned' },
-      { name: 'Emergency Works', href: '/services#emergency' },
-      { name: 'Event Management & Signage', href: '/services#events' },
-      { name: 'Equipment Hire', href: '/services#equipment' },
-    ],
-  },
-  {
-    name: 'Sectors',
-    href: '/sectors',
-    dropdown: [
-      { name: 'Utilities', href: '/sectors#utilities' },
-      { name: 'Infrastructure', href: '/sectors#infrastructure' },
-      { name: 'Local Authorities', href: '/sectors#authorities' },
-      { name: 'Principal Contractors', href: '/sectors#contractors' },
-    ],
-  },
+  { name: 'Services', href: '/services' },
+  { name: 'Sectors', href: '/sectors' },
   { name: 'Why Choose ETM', href: '/why-choose-etm' },
   { name: 'Environmental', href: '/environmental' },
   { name: 'Case Studies', href: '/case-studies' },
@@ -143,19 +123,15 @@ export function Header() {
         </div>
 
         <div className="hidden lg:flex lg:gap-x-1">
-          {navigation.map((item) =>
-            item.dropdown ? (
-              <DropdownItem key={item.name} item={item as typeof navigation[number] & { dropdown: { name: string; href: string }[] }} />
-            ) : (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="rounded-lg px-3 py-2 text-sm font-semibold text-gray-800 hover:text-accent hover:bg-gray-50 transition-all"
-              >
-                {item.name}
-              </Link>
-            )
-          )}
+          {navigation.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="rounded-lg px-3 py-2 text-sm font-semibold text-gray-800 hover:text-accent hover:bg-gray-50 transition-all"
+            >
+              {item.name}
+            </Link>
+          ))}
         </div>
 
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-3 lg:items-center">
@@ -191,51 +167,16 @@ export function Header() {
               </button>
             </div>
             <div className="flex-1 px-4 py-4 space-y-1">
-              {navigation.map((item) =>
-                item.dropdown ? (
-                  <div key={item.name}>
-                    <button
-                      className="flex items-center justify-between w-full rounded-xl px-4 py-3 text-base font-semibold text-gray-900 hover:bg-gray-50 transition-colors"
-                      onClick={() => setMobileExpanded(mobileExpanded === item.name ? null : item.name)}
-                    >
-                      {item.name}
-                      <ChevronDown
-                        className={`h-4 w-4 text-gray-500 transition-transform duration-200 ${mobileExpanded === item.name ? 'rotate-180' : ''}`}
-                      />
-                    </button>
-                    {mobileExpanded === item.name && (
-                      <div className="mt-1 ml-4 space-y-1 border-l-2 border-accent/20 pl-4">
-                        <Link
-                          href={item.href}
-                          className="block rounded-lg px-3 py-2 text-sm font-semibold text-accent hover:bg-accent/5 transition-colors"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          All {item.name}
-                        </Link>
-                        {item.dropdown.map((sub) => (
-                          <Link
-                            key={sub.name}
-                            href={sub.href}
-                            className="block rounded-lg px-3 py-2 text-sm text-gray-600 hover:text-accent hover:bg-accent/5 transition-colors"
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            {sub.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="block rounded-xl px-4 py-3 text-base font-semibold text-gray-900 hover:bg-gray-50 transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                )
-              )}
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="block rounded-xl px-4 py-3 text-base font-semibold text-gray-900 hover:bg-gray-50 transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
             </div>
             <div className="px-4 pb-6 pt-2 border-t border-gray-100">
               <Button asChild className="w-full bg-accent hover:bg-accent/90 text-white rounded-xl">

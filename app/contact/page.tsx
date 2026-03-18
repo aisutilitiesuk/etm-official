@@ -1,5 +1,5 @@
 'use client';
-
+import Image from 'next/image';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -8,19 +8,55 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Phone, MapPin, Mail, Clock } from 'lucide-react';
 
+import { useState } from 'react';
+import { toast } from 'sonner';
+
 export default function ContactPage() {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert('Thank you for your enquiry. We will be in touch shortly.');
+    setLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setSuccess(true);
+        toast.success('Enquiry sent successfully! We will be in touch shortly.');
+        (e.target as HTMLFormElement).reset();
+      } else {
+        throw new Error('Failed to send enquiry');
+      }
+    } catch (error) {
+      toast.error('Something went wrong. Please try again or call us directly.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <>
       <Header />
       <main>
-        <section className="relative isolate overflow-hidden bg-primary pt-24 sm:pt-32">
-          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary to-secondary" />
-          <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+        <section className="relative isolate overflow-hidden bg-primary pt-24 sm:pt-32 min-h-[50vh] flex items-center">
+          <Image
+            src="/Road_construction_zone_202603180101.jpeg"
+            alt="Contact Us background"
+            fill
+            className="absolute inset-0 -z-10 object-cover object-center opacity-30 shadow-2xl"
+            priority
+          />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/80 via-primary/40 to-primary/80" />
+          <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 w-full">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
                 Contact Us
@@ -128,23 +164,23 @@ export default function ContactPage() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
                       <Label htmlFor="name">Name *</Label>
-                      <Input id="name" name="name" required className="mt-2" />
+                      <Input id="name" name="name" required className="mt-2" disabled={loading} />
                     </div>
                     <div>
                       <Label htmlFor="company">Company</Label>
-                      <Input id="company" name="company" className="mt-2" />
+                      <Input id="company" name="company" className="mt-2" disabled={loading} />
                     </div>
                     <div>
                       <Label htmlFor="email">Email *</Label>
-                      <Input id="email" name="email" type="email" required className="mt-2" />
+                      <Input id="email" name="email" type="email" required className="mt-2" disabled={loading} />
                     </div>
                     <div>
                       <Label htmlFor="phone">Phone *</Label>
-                      <Input id="phone" name="phone" type="tel" required className="mt-2" />
+                      <Input id="phone" name="phone" type="tel" required className="mt-2" disabled={loading} />
                     </div>
                     <div>
                       <Label htmlFor="service">Service Required</Label>
-                      <Input id="service" name="service" placeholder="e.g., Planned Works, Emergency Response" className="mt-2" />
+                      <Input id="service" name="service" placeholder="e.g., Planned Works, Emergency Response" className="mt-2" disabled={loading} />
                     </div>
                     <div>
                       <Label htmlFor="message">Project Details *</Label>
@@ -155,11 +191,21 @@ export default function ContactPage() {
                         rows={6}
                         placeholder="Please provide details about your project, location, and requirements"
                         className="mt-2"
+                        disabled={loading}
                       />
                     </div>
-                    <Button type="submit" className="w-full bg-accent hover:bg-accent/90 text-white">
-                      Send Enquiry
+                    <Button 
+                      type="submit" 
+                      className="w-full bg-accent hover:bg-accent/90 text-white"
+                      disabled={loading}
+                    >
+                      {loading ? 'Sending...' : 'Send Enquiry'}
                     </Button>
+                    {success && (
+                      <p className="text-sm font-medium text-green-600 animate-pulse">
+                        Successfully sent to ETM!
+                      </p>
+                    )}
                     <p className="text-xs text-muted-foreground">
                       By submitting this form, you agree to be contacted regarding your enquiry.
                     </p>

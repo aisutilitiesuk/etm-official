@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ServiceCard } from '@/components/ServiceCard';
@@ -145,9 +146,16 @@ export default function ServicesPage() {
       />
       <Header />
       <main>
-        <section className="relative isolate overflow-hidden bg-primary pt-24 sm:pt-32">
-          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary to-secondary" />
-          <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+        <section className="relative isolate overflow-hidden bg-primary pt-24 sm:pt-32 min-h-[50vh] flex items-center">
+          <Image
+            src="/Professional_editorial_photograph_202603180101.jpeg"
+            alt="Services background"
+            fill
+            className="absolute inset-0 -z-10 object-cover object-center opacity-30 shadow-2xl"
+            priority
+          />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/80 via-primary/40 to-primary/80" />
+          <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 w-full">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
                 Traffic Management Services

@@ -1,21 +1,18 @@
 'use client';
 
+import Image from 'next/image';
+
 const clients = [
-  'Castle Kelly Utilities',
-  'NDA',
-  'UKPS',
-  'UNS',
-  'AIS Utilities',
-  'Energeyes',
-  'Baileys Building Contractors',
-  'Castle Kelly Utilities',
-  'NDA',
-  'UKPS',
-  'UNS',
-  'AIS Utilities',
-  'Energeyes',
-  'Baileys Building Contractors',
+  { name: 'AIS Utilities', logo: '/clients/ais-company-logo-300x300.png' },
+  { name: 'Baileys', logo: '/clients/builtbybaileys.jpg' },
+  { name: 'Energeyes', logo: '/clients/energeyes.png' },
+  { name: 'M&E Connect', logo: '/clients/mandeconnectlogo-300x300.jpg' },
+  { name: 'NDA', logo: '/clients/nda-company-logo-300x300.png' },
+  { name: 'UNS', logo: '/clients/uns-logo-andrew-300x300.png' },
 ];
+
+// Duplicate for smooth marquee
+const allClients = [...clients, ...clients, ...clients, ...clients];
 
 export function LogoStrip() {
   return (
@@ -26,15 +23,20 @@ export function LogoStrip() {
         </p>
       </div>
       <div className="relative flex">
-        <div className="flex animate-marquee gap-12 whitespace-nowrap items-center">
-          {clients.map((client, i) => (
+        <div className="flex animate-marquee gap-24 whitespace-nowrap items-center py-12">
+          {allClients.map((client, i) => (
             <div
               key={i}
-              className="inline-flex items-center justify-center min-w-[160px] h-12 rounded-xl border border-gray-200 bg-white px-5 shadow-sm hover:border-accent/40 hover:shadow-md transition-all duration-200"
+              className="inline-flex items-center justify-center min-w-[150px] transition-all duration-300 group"
             >
-              <span className="text-sm font-semibold text-primary/70 hover:text-primary transition-colors">
-                {client}
-              </span>
+              <Image
+                src={client.logo}
+                alt={client.name}
+                width={200}
+                height={100}
+                className="max-h-24 w-auto object-contain transition-all duration-500 group-hover:scale-110"
+                priority
+              />
             </div>
           ))}
         </div>

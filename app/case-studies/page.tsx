@@ -1,4 +1,5 @@
 import { Metadata } from 'next';
+import Image from 'next/image';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { CaseStudyCard } from '@/components/CaseStudyCard';
@@ -13,14 +14,14 @@ const caseStudies = [
   {
     title: 'Urban Multi-Phase Utility Infrastructure Upgrade',
     description: 'Complex city-centre works with high pedestrian flow, local business access management, and multi-phase closures delivered with full Chapter 8 compliance and dedicated contract management.',
-    image: 'https://images.pexels.com/photos/1624600/pexels-photo-1624600.jpeg',
+    image: '/Traffic_cones_on_202603180104.jpeg',
     href: '/case-studies/urban-infrastructure',
     tags: ['Utilities', 'Urban', 'Multi-Phase', 'Chapter 8'],
   },
   {
     title: '12km Multi-Borough Utility Infrastructure Scheme',
     description: 'Leading ICP project across two local authority boroughs over 52 weeks, involving complex permit management, out-of-hours works, and dynamic traffic reconfiguration.',
-    image: 'https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg',
+    image: '/Utility_worksite_in_202603180103.jpeg',
     href: '/case-studies/multi-borough',
     tags: ['Infrastructure', 'Multi-Borough', 'Long-Term', '52 Weeks'],
   },
@@ -31,9 +32,16 @@ export default function CaseStudiesPage() {
     <>
       <Header />
       <main>
-        <section className="relative isolate overflow-hidden bg-primary pt-24 sm:pt-32">
-          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary to-secondary" />
-          <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+        <section className="relative isolate overflow-hidden bg-primary pt-24 sm:pt-32 min-h-[50vh] flex items-center">
+          <Image
+            src="/must_be_wearing_202603180104.jpeg"
+            alt="Case Studies background"
+            fill
+            className="absolute inset-0 -z-10 object-cover object-center opacity-30 shadow-2xl"
+            priority
+          />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/80 via-primary/40 to-primary/80" />
+          <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 w-full">
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
                 Case Studies

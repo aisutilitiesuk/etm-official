@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { EmergencyCallout } from '@/components/EmergencyCallout';
+import { Toaster } from 'sonner';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -52,6 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en-GB">
       <body className={inter.className}>
+        <Toaster position="top-right" richColors />
         <EmergencyCallout />
         {children}
       </body>

@@ -131,21 +131,21 @@ export default function Home() {
 
         {/* Hero */}
         <section className="relative isolate overflow-hidden bg-primary min-h-screen flex items-center">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary/90 to-primary" />
+          <div className="absolute inset-0 z-10 bg-black/20" /> {/* Subtle tint for readability without heavy overlay */}
           <div className="absolute inset-0">
-            <Image
-              src="https://images.pexels.com/photos/2760243/pexels-photo-2760243.jpeg"
-              alt="Traffic management background"
-              fill
-              className="object-cover opacity-15"
-              priority
-            />
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 h-full w-full object-cover"
+            >
+              <source src="/etm-traffic-management.mp4" type="video/mp4" />
+            </video>
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-primary/30" />
-          <div className="absolute top-1/4 left-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute bottom-1/4 right-10 w-96 h-96 bg-white/5 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="relative mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8 lg:py-48 w-full">
+
+          <div className="relative mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8 lg:py-48 w-full z-20">
             <div className="mx-auto max-w-4xl text-center">
               <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-1.5 mb-8">
                 <span className="h-2 w-2 rounded-full bg-accent animate-pulse" />
@@ -154,7 +154,7 @@ export default function Home() {
                 </span>
               </div>
 
-              <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl leading-[1.05] mb-8">
+              <h1 className="text- balance text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl leading-[1.05] mb-8">
                 Safe, Compliant Traffic
                 <span className="block text-accent">Management</span>
                 That Keeps Projects Moving
@@ -203,7 +203,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/40">
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/40 z-20">
             <span className="text-xs">Scroll</span>
             <ChevronDown className="h-4 w-4 animate-bounce" />
           </div>
