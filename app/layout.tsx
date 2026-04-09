@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { EmergencyCallout } from '@/components/EmergencyCallout';
+import { CookieBanner } from '@/components/CookieBanner';
 import { Toaster } from 'sonner';
 
 const inter = Inter({
@@ -56,6 +57,7 @@ export default function RootLayout({
         <Toaster position="top-right" richColors />
         <EmergencyCallout />
         {children}
+        <CookieBanner />
       </body>
     </html>
   );

@@ -9,6 +9,8 @@ const clients = [
   { name: 'M&E Connect', logo: '/clients/mandeconnectlogo-300x300.jpg' },
   { name: 'NDA', logo: '/clients/nda-company-logo-300x300.png' },
   { name: 'UNS', logo: '/clients/uns-logo-andrew-300x300.png' },
+  { name: 'RB Utilities', logo: '/clients/rbutilities.png' },
+  { name: 'ECMS Utilities', logo: '/clients/ecms-utilities.png' },
 ];
 
 // Duplicate for smooth marquee

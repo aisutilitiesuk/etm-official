@@ -118,9 +118,14 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-primary mb-1">Email</h3>
-                      <a href="mailto:info@etmtrafficmanagement.co.uk" className="text-muted-foreground hover:text-accent transition-colors">
-                        info@etmtrafficmanagement.co.uk
-                      </a>
+                      <div className="flex flex-col gap-1">
+                        <a href="mailto:luke.stratton@etmtrafficmanagement.co.uk" className="text-muted-foreground hover:text-accent transition-colors break-all">
+                          luke.stratton@etmtrafficmanagement.co.uk
+                        </a>
+                        <a href="mailto:mark.benham@etmtrafficmanagement.co.uk" className="text-muted-foreground hover:text-accent transition-colors break-all">
+                          mark.benham@etmtrafficmanagement.co.uk
+                        </a>
+                      </div>
                     </div>
                   </div>
 
@@ -234,7 +239,7 @@ export default function ContactPage() {
                   </a>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
-                  <a href="mailto:info@etmtrafficmanagement.co.uk">
+                  <a href="mailto:luke.stratton@etmtrafficmanagement.co.uk">
                     <Mail className="mr-2 h-5 w-5" />
                     Email Us
                   </a>

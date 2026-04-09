@@ -9,6 +9,11 @@ const navigation = {
     { name: 'Environmental', href: '/environmental' },
     { name: 'Case Studies', href: '/case-studies' },
   ],
+  legal: [
+    { name: 'Terms & Conditions', href: '/terms' },
+    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Cookies Policy', href: '/cookies' },
+  ],
   services: [
     { name: 'Urban & Rural Traffic Management', href: '/services#urban-rural' },
     { name: 'High Speed Traffic Management', href: '/services#high-speed' },
@@ -62,7 +67,7 @@ export function Footer() {
 
             <div className="space-y-6 mb-12 xl:mb-0">
               <Image
-                src="/etm-logo.png"
+                src="/ETM.png"
                 alt="ETM Traffic Management"
                 width={180}
                 height={50}
@@ -84,11 +89,16 @@ export function Footer() {
                     07547 183741
                   </a>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Mail className="h-4 w-4 text-accent flex-shrink-0" />
-                  <a href="mailto:info@etmtrafficmanagement.co.uk" className="text-sm text-gray-400 hover:text-white transition-colors break-all">
-                    info@etmtrafficmanagement.co.uk
-                  </a>
+                <div className="flex items-start gap-3">
+                  <Mail className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
+                  <div className="flex flex-col gap-2">
+                    <a href="mailto:luke.stratton@etmtrafficmanagement.co.uk" className="text-xs text-gray-400 hover:text-white transition-colors break-all">
+                      luke.stratton@etmtrafficmanagement.co.uk
+                    </a>
+                    <a href="mailto:mark.benham@etmtrafficmanagement.co.uk" className="text-xs text-gray-400 hover:text-white transition-colors break-all">
+                      mark.benham@etmtrafficmanagement.co.uk
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -124,6 +134,19 @@ export function Footer() {
                 <h3 className="text-xs font-bold uppercase tracking-widest text-gray-300 mb-5">Sectors</h3>
                 <ul className="space-y-3">
                   {navigation.sectors.map((item) => (
+                    <li key={item.name}>
+                      <Link href={item.href} className="text-sm text-gray-400 hover:text-white transition-colors">
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xs font-bold uppercase tracking-widest text-gray-300 mb-5">Legal</h3>
+                <ul className="space-y-3">
+                  {navigation.legal.map((item) => (
                     <li key={item.name}>
                       <Link href={item.href} className="text-sm text-gray-400 hover:text-white transition-colors">
                         {item.name}
