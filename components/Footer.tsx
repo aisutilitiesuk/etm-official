@@ -69,9 +69,9 @@ export function Footer() {
               <Image
                 src="/etm-on-dark.png"
                 alt="ETM Traffic Management"
-                width={100}
-                height={50}
-                className="h-10 w-auto"
+                width={150}
+                height={75}
+                className="h-[60px] w-auto"
               />
               <p className="text-sm leading-6 text-gray-400 max-w-xs">
                 Safe, efficient and fully compliant traffic management solutions across the UK.

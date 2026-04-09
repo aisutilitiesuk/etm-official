@@ -103,9 +103,9 @@ export function Header() {
             <Image
               src="/etm-on-light.png"
               alt="ETM Traffic Management"
-              width={100}
-              height={50}
-              className="h-10 w-auto transition-opacity group-hover:opacity-80"
+              width={150}
+              height={75}
+              className="h-[60px] w-auto transition-opacity group-hover:opacity-80"
               priority
             />
           </Link>
@@ -153,9 +153,9 @@ export function Header() {
                 <Image
                   src="/etm-on-light.png"
                   alt="ETM Traffic Management"
-                  width={88}
-                  height={44}
-                  className="h-9 w-auto"
+                  width={132}
+                  height={66}
+                  className="h-[54px] w-auto"
                 />
               </Link>
               <button
