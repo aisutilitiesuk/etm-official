@@ -101,9 +101,9 @@ export function Header() {
         <div className="flex lg:flex-1">
           <Link href="/" className="group flex items-center gap-2 -m-1.5 p-1.5">
             <Image
-              src="/ETM.png"
+              src="/etm-on-light.png"
               alt="ETM Traffic Management"
-              width={180}
+              width={100}
               height={50}
               className="h-10 w-auto transition-opacity group-hover:opacity-80"
               priority
@@ -151,9 +151,9 @@ export function Header() {
             <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
               <Link href="/" onClick={() => setMobileMenuOpen(false)}>
                 <Image
-                  src="/ETM.png"
+                  src="/etm-on-light.png"
                   alt="ETM Traffic Management"
-                  width={160}
+                  width={88}
                   height={44}
                   className="h-9 w-auto"
                 />

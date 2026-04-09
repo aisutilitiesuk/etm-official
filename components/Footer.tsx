@@ -67,9 +67,9 @@ export function Footer() {
 
             <div className="space-y-6 mb-12 xl:mb-0">
               <Image
-                src="/ETM.png"
+                src="/etm-on-dark.png"
                 alt="ETM Traffic Management"
-                width={180}
+                width={100}
                 height={50}
                 className="h-10 w-auto"
               />
