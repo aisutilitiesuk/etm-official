@@ -80,7 +80,7 @@ export function Footer() {
                 <div className="flex items-start gap-3">
                   <MapPin className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
                   <span className="text-sm text-gray-400">
-                    The Courtyard, Alban Park,<br />St Albans, AL4 0LA
+                    Pursley Farm, 2 London Road,<br />Shenley, WD7 9EN
                   </span>
                 </div>
                 <div className="flex items-center gap-3">

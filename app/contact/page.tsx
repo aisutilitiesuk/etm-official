@@ -103,9 +103,9 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold text-primary mb-1">Address</h3>
                       <address className="text-muted-foreground not-italic">
-                        The Courtyard, Alban Park<br />
-                        St Albans<br />
-                        AL4 0LA
+                        Pursley Farm, 2 London Road<br />
+                        Shenley<br />
+                        WD7 9EN
                       </address>
                     </div>
                   </div>
