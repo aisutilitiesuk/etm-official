@@ -85,8 +85,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-primary mb-1">Phone</h3>
-                      <a href="tel:07547183741" className="text-muted-foreground hover:text-accent transition-colors">
-                        07547 183741
+                      <a href="tel:07360690612" className="text-muted-foreground hover:text-accent transition-colors">
+                        07360 690612
                       </a>
                       <p className="text-sm text-muted-foreground mt-1">
                         For urgent or emergency works, call anytime
@@ -153,9 +153,9 @@ export default function ContactPage() {
                     For urgent traffic management requirements, call us directly for immediate response.
                   </p>
                   <Button asChild className="bg-accent hover:bg-accent/90 text-white w-full sm:w-auto">
-                    <a href="tel:07547183741">
+                    <a href="tel:07360690612">
                       <Phone className="mr-2 h-4 w-4" />
-                      Call 07547 183741 Now
+                      Call 07360 690612 Now
                     </a>
                   </Button>
                 </div>
@@ -233,7 +233,7 @@ export default function ContactPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-white">
-                  <a href="tel:07547183741">
+                  <a href="tel:07360690612">
                     <Phone className="mr-2 h-5 w-5" />
                     Call Us
                   </a>

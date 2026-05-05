@@ -52,7 +52,7 @@ export function Footer() {
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <a
-                href="tel:07547183741"
+                href="tel:07360690612"
                 className="inline-flex items-center gap-2 rounded-xl bg-white/10 hover:bg-white/20 px-5 py-2.5 text-sm font-semibold text-white transition-colors"
               >
                 <Phone className="h-4 w-4" />
@@ -85,8 +85,8 @@ export function Footer() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="h-4 w-4 text-accent flex-shrink-0" />
-                  <a href="tel:07547183741" className="text-sm text-gray-400 hover:text-white transition-colors">
-                    07547 183741
+                  <a href="tel:07360690612" className="text-sm text-gray-400 hover:text-white transition-colors">
+                    07360 690612
                   </a>
                 </div>
                 <div className="flex items-start gap-3">

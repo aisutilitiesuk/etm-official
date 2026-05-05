@@ -115,7 +115,7 @@ export default function Home() {
       postalCode: 'AL4 0LA',
       addressCountry: 'GB',
     },
-    telephone: '+44-7547-183741',
+    telephone: '+44-7360-690612',
     areaServed: 'GB',
     serviceType: ['Traffic Management', 'Temporary Traffic Control', 'Emergency Traffic Management', 'Event Traffic Management'],
   };
@@ -185,7 +185,7 @@ export default function Home() {
                   variant="outline"
                   className="border-accent/60 text-accent hover:bg-accent hover:text-white w-full sm:w-auto backdrop-blur-sm text-base px-8"
                 >
-                  <a href="tel:07547183741" className="flex items-center gap-2">
+                  <a href="tel:07360690612" className="flex items-center gap-2">
                     <Phone className="h-5 w-5" />
                     Emergency? Call Now
                   </a>

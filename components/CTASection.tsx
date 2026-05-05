@@ -114,9 +114,9 @@ export function CTASection({
               variant="outline"
               className="border-gray-300 text-gray-700 hover:border-primary hover:text-primary w-full sm:w-auto"
             >
-              <a href="tel:07547183741" className="flex items-center gap-2">
+              <a href="tel:07360690612" className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                Call 07547 183741
+                Call 07360 690612
               </a>
             </Button>
           )}
